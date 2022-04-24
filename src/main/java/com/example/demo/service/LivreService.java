@@ -17,24 +17,29 @@ public class LivreService {
 	@Autowired
 	private LivreRepository repository;
 	
+	//INSERT
 	 public void addLivre(Livre livre) {
 		 repository.save(livre);
 	    }
 	
+	 // DISPLAY WITH ORDERBY
 	@OrderBy(clause = "titre ASC")
 	public List<Livre> getLivres(){
 		return repository.findAll();
 	}
 	
+	//GET BOOK BY ID IN PARAMETRE
 	public Livre getLivreById(int id){
 		return repository.findById(id).orElse(null);
 	}
 	
+	//DELETE BOOK
 	public String deleteLivre(int id) {
 		repository.deleteById(id);
 		return "Book removed !! "+id;
 	}
 	
+	// UPDATE BOOK
 	public Livre updateLivre(Livre livre) {
 		
 		Livre existingLivre=repository.findById(livre.getId()).orElse(null);

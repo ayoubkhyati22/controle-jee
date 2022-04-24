@@ -11,7 +11,7 @@ import com.example.demo.entities.Livre;
 @Transactional
 public interface LivreRepository extends JpaRepository<Livre,Integer> {
 
-	List<Livre> findAll();
+	
 	
 
 }

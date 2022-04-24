@@ -22,13 +22,13 @@ import lombok.NoArgsConstructor;
 public class Livre {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Auto increment
 	private int id;
 	
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, length = 50) // la taille ne depasse pas 50 caracteres
 	private String titre;
 	
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false, updatable = false) // impossible de le modifier
 	private String maisonedit;
 	
 	@Column(nullable = false)
@@ -40,7 +40,7 @@ public class Livre {
 	@Column(nullable = false)
 	private int nbrpage;
 	
-	@Column(unique=true, nullable = false, updatable = false)
+	@Column(unique=true, nullable = false, updatable = false) // champ unique
 	private String isbn;
 	
 	@Column(nullable = false)
@@ -50,7 +50,7 @@ public class Livre {
 	private boolean disponible;
 	
 	
-	
+	//Getters et setters
 	
 	public int getId() {
 		return id;
