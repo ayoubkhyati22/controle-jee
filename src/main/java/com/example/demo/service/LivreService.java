@@ -17,6 +17,9 @@ public class LivreService {
 	@Autowired
 	private LivreRepository repository;
 	
+	 public void addLivre(Livre livre) {
+		 repository.save(livre);
+	    }
 	
 	@OrderBy(clause = "titre ASC")
 	public List<Livre> getLivres(){
@@ -29,7 +32,7 @@ public class LivreService {
 	
 	public String deleteLivre(int id) {
 		repository.deleteById(id);
-		return "Livre removed !! "+id;
+		return "Book removed !! "+id;
 	}
 	
 	public Livre updateLivre(Livre livre) {
